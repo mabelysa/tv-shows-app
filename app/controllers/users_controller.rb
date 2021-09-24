@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       password_confirmation: params[:password_confirmation],
     )
     if user.save
-      render json: { message: "User created successfully" }, status: :created
+      render json: { message: "User created successfully." }, status: :created
     else
       render json: { errors: user.errors.full_messages }, status: :bad_request
     end
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
     user.email = params[:email] || user.email
     user.password_confirmation = params[:password_confirmation] || user.password_confirmation
     if user.save
-      render json: user {message: "User updated successfully"}
+      render json: { message: "User updated successfully." }
     else
       render json: { errors: user.errors.full_messages }, status: :bad_request
     end

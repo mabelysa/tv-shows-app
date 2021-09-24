@@ -17,7 +17,7 @@ class ActorsController < ApplicationController
       hometown: params[:hometown],
     )
     if actor.save
-      render json: { message: "Actor created successfully" }, status: :created
+      render json: { message: "Actor created successfully." }, status: :created
     else
       render json: { errors: actor.errors.full_messages }, status: :unprocessable_entity
     end
@@ -30,7 +30,7 @@ class ActorsController < ApplicationController
     actor.gender = params[:gender] || actor.gender
     actor.hometown = params[:hometown] || actor.hometown
     if actor.save
-      render json: { message: "Actor updated successfully" }
+      render json: { message: "Actor updated successfully." }
     else
       render json: { errors: actor.errors.full_messages }, status: :unprocessable_entity
     end

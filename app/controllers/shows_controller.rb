@@ -19,7 +19,7 @@ class ShowsController < ApplicationController
       # user_id: current_user.id,
     )
     if show.save
-      render json: { message: "Show created successfully" }, status: :created
+      render json: { message: "Show created successfully." }, status: :created
     else
       render json: { errors: show.errors.full_messages }, status: :unprocessable_entity
     end
@@ -41,7 +41,7 @@ class ShowsController < ApplicationController
     show.favorite = params[:favorite] || show.favorite
     show.user_id = params[:user_id] || show.user_id
     if show.save
-      render json: { message: "Show created successfully" }, status: :created
+      render json: { message: "Show updated successfully." }, status: :created
     else
       render json: { errors: show.errors.full_messages }, status: :unprocessable_entity
     end

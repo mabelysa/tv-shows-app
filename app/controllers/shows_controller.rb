@@ -18,8 +18,11 @@ class ShowsController < ApplicationController
       user_id: params[:user_id],
       # user_id: current_user.id,
     )
-    show.save
-    render json: show
+    if show.save
+      render json: show
+    else
+      render json: { errors: show.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -37,8 +40,11 @@ class ShowsController < ApplicationController
     show.network = params[:network] || show.network
     show.favorite = params[:favorite] || show.favorite
     show.user_id = params[:user_id] || show.user_id
-    show.save
-    render json: show
+    if show.save
+      render json: show
+    else
+      render json: { errors: show.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def destroy

@@ -33,7 +33,7 @@ class ShowGenresController < ApplicationController
   end
 
   def destroy
-    show_genres = ActorShows.find_by(id: params[:id])
+    show_genres = ShowGenre.find_by(id: params[:id])
     show_genres.destroy
     render json: { message: "ShowGenres successfully destroyed." }
   end

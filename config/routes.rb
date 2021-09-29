@@ -37,17 +37,17 @@ Rails.application.routes.draw do
 
   ## ShowGenres
 
-  get "/showgenres" => "showsgenres#index"
-  get "/showgenres/:id" => "showgenres#show"
-  post "/showgenres" => "showgenres#create"
-  patch "/showgenres/:id" => "showgenres#update"
-  delete "/showgenres/:id" => "showgenres#destroy"
+  get "/showgenres" => "show_genres#index"
+  get "/showgenres/:id" => "show_genres#show"
+  post "/showgenres" => "show_genres#create"
+  patch "/showgenres/:id" => "show_genres#update"
+  delete "/showgenres/:id" => "show_genres#destroy"
 
   ## ActorShows
 
-  get "/actorshows" => "actorshows#index"
-  get "/actorshows/:id" => "actorshows#show"
-  post "/actorshows" => "actorshows#create"
-  patch "/actorshows/:id" => "actorshows#update"
-  delete "/actorshows/:id" => "actorshows#destroy"
+  get "/actorshows" => "actor_shows#index"
+  get "/actorshows/:id" => "actor_shows#show"
+  post "/actorshows" => "actor_shows#create"
+  patch "/actorshows/:id" => "actor_shows#update"
+  delete "/actorshows/:id" => "actor_shows#destroy"
 end

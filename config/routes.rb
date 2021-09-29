@@ -34,4 +34,20 @@ Rails.application.routes.draw do
   ## Sessions
 
   post "/sessions" => "sessions#create"
+
+  ## ShowGenres
+
+  get "/showgenres" => "showsgenres#index"
+  get "/showgenres/:id" => "showgenres#show"
+  post "/showgenres" => "showgenres#create"
+  patch "/showgenres/:id" => "showgenres#update"
+  delete "/showgenres/:id" => "showgenres#destroy"
+
+  ## ActorShows
+
+  get "/actorshows" => "actorshows#index"
+  get "/actorshows/:id" => "actorshows#show"
+  post "/actorshows" => "actorshows#create"
+  patch "/actorshows/:id" => "actorshows#update"
+  delete "/actorshows/:id" => "actorshows#destroy"
 end
